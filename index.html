@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dampak Penjajahan Terhadap IPTEK di Indonesia • Kelompok 5</title>
+
+    <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= PRELOADER EXHIBITION ENTRANCE ================= -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-curtain preloader-curtain-top"></div>
+        <div class="preloader-curtain preloader-curtain-bottom"></div>
+        <div class="preloader-content">
+            <div class="preloader-logo-wrap">
+                <img src="assets/logo.png" alt="Logo ARS" class="preloader-logo">
+            </div>
+            <div class="preloader-eyebrow">ARSIP HISTORIS NUSANTARA</div>
+            <h2 class="preloader-title">Dampak Kolonialisme Terhadap IPTEK</h2>
+            <div class="preloader-progress-track">
+                <div class="preloader-progress-fill" id="preloaderBar"></div>
+            </div>
+            <div class="preloader-status-row">
+                <span class="preloader-status-text" id="preloaderStatus">Memuat arsip kronologi...</span>
+                <span class="preloader-counter" id="preloaderCounter">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= CUSTOM EDITORIAL CURSOR ================= -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing">
+        <span class="cursor-text" id="cursorText"></span>
+    </div>
+
+    <!-- ================= EDITORIAL MINIMALIST HEADER ================= -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo magnetic-target" onclick="goToSlide(0)">
+                <img src="assets/logo.png" alt="Logo ARS" class="logo-img">
+                <div class="logo-divider"></div>
+                <div class="logo-text">
+                    <span class="logo-main">ARS</span>
+                    <span class="logo-sub">Arya • Rafli • Sidqi</span>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active magnetic-target" data-slide="0">Beranda</a></li>
+                <li><a href="#about" class="nav-link magnetic-target" data-slide="1">Latar Belakang</a></li>
+                <li><a href="#profil" class="nav-link magnetic-target" data-slide="2">Tim Peneliti</a></li>
+                <li><a href="#materi" class="nav-link magnetic-target" data-slide="3">Linimasa Era</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#materi" class="nav-cta-btn magnetic-target" onclick="goToSlide(3)">
+                    <span>Buka Arsip</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= FLOATING SLIDE ARROW CONTROLS ================= -->
+    <button class="slide-arrow slide-arrow-prev magnetic-target" id="btnPrevSlide" title="Slide Sebelumnya" aria-label="Slide Sebelumnya">
+        <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button class="slide-arrow slide-arrow-next magnetic-target" id="btnNextSlide" title="Slide Berikutnya" aria-label="Slide Berikutnya">
+        <i class="fa-solid fa-arrow-right"></i>
+    </button>
+
+    <!-- ================= MAIN HORIZONTAL SLIDER CONTAINER ================= -->
+    <main id="mainSlider">
+
+        <!-- ================= SLIDE 1: HOME / HERO (ALDEN & VALE SPLIT) ================= -->
+        <section id="home" class="section home is-active">
+            <div class="hero-wrapper">
+                
+                <!-- Main Split Hero Card with 3D Tilt -->
+                <div class="hero-split-card tilt-card" data-tilt-max="4">
+                    <!-- Left: Deep Forest Green Content Box -->
+                    <div class="hero-left-content">
+                        <div class="hero-eyebrow anim-stagger">
+                            <span class="dot"></span>
+                            <span>DOKUMENTASI SEJARAH • KELOMPOK 5</span>
+                        </div>
+
+                        <h1 class="hero-display-title anim-stagger">
+                            Jejak Kolonial.<br>
+                            Transformasi IPTEK.
+                        </h1>
+
+                        <p class="hero-description anim-stagger">
+                            Menelusuri dua sisi sains dan teknologi kolonial di Nusantara: eksploitasi ekonomi melalui jalur rel dan telegraf, serta lahirnya cendekiawan yang memimpin kemerdekaan.
+                        </p>
+
+                        <div class="hero-actions-row anim-stagger">
+                            <a href="#about" class="btn-sand magnetic-target" onclick="goToSlide(1)">
+                                <span>Mulai Penelusuran</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                            <a href="#materi" class="btn-outline-sage magnetic-target" onclick="goToSlide(3)">
+                                <span>Lihat 10 Era</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Historical Visual Frame -->
+                    <div class="hero-right-visual">
+                        <img src="assets/home-voc.jpeg" alt="Ilustrasi Sejarah Kolonialisme" class="kenburns-img">
+                        <div class="hero-visual-overlay">
+                            <div class="hero-visual-caption anim-stagger">
+                                <h5>PERSPEKTIF SEJARAH NUSANTARA</h5>
+                                <p>Menelusuri kronologi dari era maritim purba hingga kemandirian sains nasional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom 3-Card Summary Bar -->
+                <div class="hero-bottom-bar anim-stagger">
+                    <div class="hero-ticker-item">
+                        <div class="ticker-icon"><i class="fa-solid fa-compass"></i></div>
+                        <div class="ticker-text">
+                            <h4>Navigasi & Maritim</h4>
+                            <p>Kartografi dan kapal samudra barat mengubah rute kepulauan.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-ticker-item">
+                        <div class="ticker-icon"><i class="fa-solid fa-train"></i></div>
+                        <div class="ticker-text">
+                            <h4>Infrastruktur Rel & Telegraf</h4>
+                            <p>Modernisasi sarana logistik demi ekspor komoditas kolonial.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-ticker-item">
+                        <div class="ticker-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="ticker-text">
+                            <h4>Kebangkitan Intelektual</h4>
+                            <p>Pendidikan STOVIA melahirkan kaum terpelajar motor 1908.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= SLIDE 2: ABOUT / HISTORICAL CHAPTERS ================= -->
+        <section id="about" class="section about">
+            <div class="section-container">
+                <div class="section-header anim-stagger">
+                    <div class="section-eyebrow">
+                        <span class="dot"></span>
+                        <span>LATAR BELAKANG SEJARAH</span>
+                    </div>
+                    <h2 class="section-title">Transformasi Pengetahuan di Bawah Kolonialisme</h2>
+                    <p class="section-subtitle">
+                        Perkembangan ilmu dan teknologi pada masa penjajahan bukanlah transfer pengetahuan cuma-cuma, melainkan instrumen kuasa yang kemudian direbut oleh para pemuda terpelajar.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <!-- Card 1 -->
+                    <article class="about-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="about-card-top">
+                            <div class="about-icon-pill"><i class="fa-solid fa-seedling"></i></div>
+                            <span class="about-card-number">01</span>
+                        </div>
+                        <h3>Kearifan Tradisional Nusantara</h3>
+                        <p>
+                            Masyarakat Nusantara telah lama menguasai teknologi maritim kapal Pinisi, sistem irigasi Subak, astronomi <em>Pranata Mangsa</em>, serta metalurgi tempa logam keris dan gamelan.
+                        </p>
+                        <div class="about-card-footer">
+                            <span class="era-badge-pill">Pra-Abad 16</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="about-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="about-card-top">
+                            <div class="about-icon-pill"><i class="fa-solid fa-anchor"></i></div>
+                            <span class="about-card-number">02</span>
+                        </div>
+                        <h3>Teknologi Navigasi Samudra</h3>
+                        <p>
+                            Kedatangan bangsa barat memperkenalkan kartografi maritim, persenjataan mesiu, dan benteng pertahanan. Seluruh teknologi ini dimonopoli VOC untuk menguasai rempah-rempah.
+                        </p>
+                        <div class="about-card-footer">
+                            <span class="era-badge-pill">Abad 16–18 (VOC)</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="about-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="about-card-top">
+                            <div class="about-icon-pill"><i class="fa-solid fa-industry"></i></div>
+                            <span class="about-card-number">03</span>
+                        </div>
+                        <h3>Tanam Paksa & Rel Kereta Api</h3>
+                        <p>
+                            Sistem <em>Cultuurstelsel</em> (1830) memicu pembangunan jalur rel kereta api, telegraf, dan pabrik gula uap demi mempercepat pengangkutan komoditas ekspor ke pelabuhan.
+                        </p>
+                        <div class="about-card-footer">
+                            <span class="era-badge-pill">Abad 19</span>
+                        </div>
+                    </article>
+
+                    <!-- Card 4 -->
+                    <article class="about-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="about-card-top">
+                            <div class="about-icon-pill"><i class="fa-solid fa-book-bookmark"></i></div>
+                            <span class="about-card-number">04</span>
+                        </div>
+                        <h3>Politik Etis & Senjata Intelektual</h3>
+                        <p>
+                            Pendidikan dokter Jawa (STOVIA) dan sekolah teknik Belanda yang awalnya untuk pegawai murah justru mencetak cendekiawan yang memimpin perjuangan kemerdekaan nasional.
+                        </p>
+                        <div class="about-card-footer">
+                            <span class="era-badge-pill">Abad 20 – Merdeka</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SLIDE 3: PROFIL KELOMPOK 5 ================= -->
+        <section id="profil" class="section profil">
+            <div class="section-container">
+                <div class="section-header text-center anim-stagger">
+                    <div class="section-eyebrow">
+                        <span class="dot"></span>
+                        <span>TIM PENELITI & PENGEMBANG</span>
+                    </div>
+                    <h2 class="section-title">Kelompok 5 • PPLG X-4</h2>
+                    <p class="section-subtitle">
+                        Kolaborasi siswa Pengembangan Perangkat Lunak & Gim SMK Wikrama Bogor dalam menyajikan arsip edukasi IPTEK.
+                    </p>
+                </div>
+
+                <div class="team-cards-grid">
+                    <!-- Member 1: Arya Ramdani -->
+                    <article class="team-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="team-photo-wrap">
+                            <img src="assets/arya-ramdani.jpg" alt="Foto Arya Ramdani" class="team-avatar">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-header-row">
+                                <h3 class="team-name">Arya Ramdani</h3>
+                            </div>
+                            <div class="team-badges">
+                                <span class="badge-tag rayon">Cicurug 5</span>
+                                <span class="badge-tag kelas">PPLG X-4</span>
+                            </div>
+                            <p class="team-role">Frontend & Content Curator</p>
+                            <p class="team-quote">"Mengkurasi narasi sejarah dan merangkai alur kronologis arsip IPTEK."</p>
+
+                            <div class="team-socials">
+                                <a href="https://www.instagram.com/arya.rmdni09/" target="_blank" rel="noopener" class="social-link magnetic-target" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://github.com/ramdani-aja" target="_blank" rel="noopener" class="social-link magnetic-target" title="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Member 2: Rafli Halomoan -->
+                    <article class="team-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="team-photo-wrap">
+                            <img src="assets/rafli-halomoan.jpg" alt="Foto Rafli Halomoan" class="team-avatar">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-header-row">
+                                <h3 class="team-name">Rafli Halomoan</h3>
+                            </div>
+                            <div class="team-badges">
+                                <span class="badge-tag rayon">Tajur 2</span>
+                                <span class="badge-tag kelas">PPLG X-4</span>
+                            </div>
+                            <p class="team-role">UI/UX & Web Developer</p>
+                            <p class="team-quote">"Merancang interaktivitas slider, tata letak editorial, dan responsivitas antarmuka."</p>
+
+                            <div class="team-socials">
+                                <a href="https://www.instagram.com/rflihlomon/" target="_blank" rel="noopener" class="social-link magnetic-target" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://github.com/RafliHalomoan" target="_blank" rel="noopener" class="social-link magnetic-target" title="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Member 3: M Sidqi Zaeda Arsy -->
+                    <article class="team-card tilt-card anim-stagger" data-tilt-max="6">
+                        <div class="team-photo-wrap">
+                            <img src="assets/sidqi-zaeda.jpg" alt="Foto M Sidqi Zaeda Arsy" class="team-avatar">
+                        </div>
+                        <div class="team-info">
+                            <div class="team-header-row">
+                                <h3 class="team-name">M Sidqi Zaeda Arsy</h3>
+                            </div>
+                            <div class="team-badges">
+                                <span class="badge-tag rayon">Cibedug 1</span>
+                                <span class="badge-tag kelas">PPLG X-4</span>
+                            </div>
+                            <p class="team-role">Research & Media Specialist</p>
+                            <p class="team-quote">"Menelusuri referensi primer dan memverifikasi ketepatan data linimasa."</p>
+
+                            <div class="team-socials">
+                                <a href="https://www.instagram.com/sidq.sy/" target="_blank" rel="noopener" class="social-link magnetic-target" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="https://github.com/sidqiarsy" target="_blank" rel="noopener" class="social-link magnetic-target" title="GitHub">
+                                    <i class="fa-brands fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SLIDE 4: MATERI / TIMELINE (CIRCULAR PORTALS) ================= -->
+        <section id="materi" class="section timeline-section">
+            <div class="section-container timeline-container-circular">
+                
+                <!-- Timeline Header Row -->
+                <div class="timeline-header-center anim-stagger">
+                    <div class="section-eyebrow">
+                        <span class="dot"></span>
+                        <span>KRONOLOGI LENGKAP SEJARAH (10 BABAK)</span>
+                    </div>
+                    <h2 class="section-title">Linimasa Perkembangan IPTEK di Indonesia</h2>
+                    <p class="section-subtitle">
+                        Telusuri 10 babak penting perjalanan sains & teknologi Nusantara. Klik lingkaran era untuk membuka arsip penjelasan lengkap.
+                    </p>
+                </div>
+
+                <!-- Horizontal Timeline Main Scrollable Gallery -->
+                <div class="timeline-track-container" id="timelineScrollArea">
+                    
+                    <!-- Milestone Axis Connecting Line -->
+                    <!-- Timeline line rendered dynamically via CSS connecting segments -->
+
+                    <div class="timeline-items-row">
+
+                        <!-- Era 1 -->
+                        <article class="timeline-item anim-stagger" data-index="0">
+                            <span class="timeline-era-tag">&lt; Abad 16</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/sebelum abad 16.png" alt="Sebelum Penjajahan">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Sebelum Penjajahan</h4>
+                                <span class="timeline-subtext">Kearifan Bahari & Logam Pamor</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 2 -->
+                        <article class="timeline-item anim-stagger" data-index="1">
+                            <span class="timeline-era-tag">Abad 16–17</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/abad 16-17.png" alt="Masuknya Bangsa Eropa">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Masuknya Bangsa Eropa</h4>
+                                <span class="timeline-subtext">Navigasi Samudra & Mesiu</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 3 -->
+                        <article class="timeline-item anim-stagger" data-index="2">
+                            <span class="timeline-era-tag">Abad 18</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/abad 18.png" alt="Penguatan Kekuasaan Belanda">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Penguatan VOC</h4>
+                                <span class="timeline-subtext">Benteng Militer & Monopoli Dagang</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 4 -->
+                        <article class="timeline-item anim-stagger" data-index="3">
+                            <span class="timeline-era-tag">Abad 19</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/abad 19.png" alt="Tanam Paksa & Infrastruktur">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Tanam Paksa & Rel Kereta</h4>
+                                <span class="timeline-subtext">Rel KA, Telegraf & Pabrik Uap</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 5 -->
+                        <article class="timeline-item anim-stagger" data-index="4">
+                            <span class="timeline-era-tag">Akhir Abad 19</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/abad 19 akhir.png" alt="Awal Pendidikan Barat">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Awal Pendidikan Modern</h4>
+                                <span class="timeline-subtext">Sekolah Dokter-Djawa (STOVIA)</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 6 -->
+                        <article class="timeline-item anim-stagger" data-index="5">
+                            <span class="timeline-era-tag">Awal Abad 20</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/awal abad 20.png" alt="Perkembangan Ilmu & Kesadaran">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Tumbuhnya Kesadaran</h4>
+                                <span class="timeline-subtext">Politik Etis & Kaum Intelektual</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 7 -->
+                        <article class="timeline-item anim-stagger" data-index="6">
+                            <span class="timeline-era-tag">1908–1945</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/masa pergerakan.png" alt="Masa Pergerakan Nasional">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Pergerakan Nasional</h4>
+                                <span class="timeline-subtext">Budi Utomo, Pers & THS Bandung</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 8 -->
+                        <article class="timeline-item anim-stagger" data-index="7">
+                            <span class="timeline-era-tag">1942–1945</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/masa jepang.png" alt="Masa Pendudukan Jepang">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Pendudukan Jepang</h4>
+                                <span class="timeline-subtext">Teknik Permesinan & Taktik Perang</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 9 -->
+                        <article class="timeline-item anim-stagger" data-index="8">
+                            <span class="timeline-era-tag">1945–1960-an</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/awal kemerdekaan.png" alt="Awal Kemerdekaan">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Awal Kemerdekaan</h4>
+                                <span class="timeline-subtext">Kedaulatan Riset & Universitas</span>
+                            </div>
+                        </article>
+
+                        <!-- Era 10 -->
+                        <article class="timeline-item anim-stagger" data-index="9">
+                            <span class="timeline-era-tag">Era Kontemporer</span>
+                            <div class="timeline-circle-frame magnetic-target">
+                                <img src="assets/era modern.png" alt="Era Modern">
+                                <div class="timeline-circle-overlay">
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-node-info">
+                                <h4>Era Modern & Digital</h4>
+                                <span class="timeline-subtext">Dirgantara N-250 & Riset BRIN</span>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= BOTTOM FLOATING DOCK ================= -->
+    <footer class="bottom-dock">
+        <div class="dock-container">
+            <div class="dock-track-progress" id="dockProgressBar"></div>
+            <div class="dock-items">
+                <button class="dock-item active magnetic-target" onclick="goToSlide(0)" data-slide="0" title="Slide Beranda">
+                    <span class="dock-num">01</span>
+                    <span class="dock-label">Beranda</span>
+                </button>
+                <button class="dock-item magnetic-target" onclick="goToSlide(1)" data-slide="1" title="Slide Latar Belakang">
+                    <span class="dock-num">02</span>
+                    <span class="dock-label">Latar Belakang</span>
+                </button>
+                <button class="dock-item magnetic-target" onclick="goToSlide(2)" data-slide="2" title="Slide Tim Peneliti">
+                    <span class="dock-num">03</span>
+                    <span class="dock-label">Tim Peneliti</span>
+                </button>
+                <button class="dock-item magnetic-target" onclick="goToSlide(3)" data-slide="3" title="Slide Linimasa">
+                    <span class="dock-num">04</span>
+                    <span class="dock-label">Linimasa Era</span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= INTERACTIVE ARTIFACT MODAL POPUP ================= -->
+    <div id="imageModal" class="modal-overlay" aria-hidden="true" role="dialog">
+        <div class="modal-card">
+            <div class="modal-toolbar">
+                <div class="modal-badge-group">
+                    <span class="modal-badge-pill" id="modalEraBadge">ERA 01</span>
+                    <span class="modal-index-counter" id="modalCounter">1 dari 10</span>
+                </div>
+                <button class="modal-close magnetic-target" id="modalClose" aria-label="Tutup Modal" title="Tutup">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="modal-body" id="modalBodyContainer">
+                <div class="modal-img-frame">
+                    <img id="modalImg" src="" alt="Ilustrasi Sejarah">
+                </div>
+                <div class="modal-content-side">
+                    <h3 id="modalTitle" class="modal-title">Judul Periode Era</h3>
+                    <div class="modal-divider"></div>
+                    <p id="modalDesc" class="modal-desc">Deskripsi sejarah lengkap akan ditampilkan di sini.</p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-nav-btn magnetic-target" id="modalBtnPrev">
+                    <i class="fa-solid fa-arrow-left"></i> Era Sebelumnya
+                </button>
+                <button class="modal-nav-btn magnetic-target" id="modalBtnNext">
+                    Era Berikutnya <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT -->
+    <script src="js/script.js"></script>
+</body>
+</html>
